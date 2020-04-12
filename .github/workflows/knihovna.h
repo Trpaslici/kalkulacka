@@ -2,30 +2,33 @@
 
 // --------------knihovna -------------------------
 
-int add(int a, int b);  //secte 2 cisla
-int sub(int a, int b);  //odecte 2 cisla
-int mul(int a, int b);  //vynasobi 2 cisla
-float divid(float a, float b);  //vydeli 2 cisla
+double add(double a, double b);  //secte 2 cisla
+double sub(double a, double b);  //odecte 2 cisla
+double mul(double a, double b);  //vynasobi 2 cisla
+double divid(double a, double b);  //vydeli 2 cisla
 long long factorial(int a); //vypocita faktorial
-float pow(float a, float b);  //vypocita mocninu a^b
-float rad(float a, float b);    ////vypocita odmocninu b|/a
+double pow(double a, double b);  //vypocita mocninu a^b
+double rad(double a, double b);    ////vypocita odmocninu b|/a
 long long komb(int a, int b); //vypocita kombinacni cislo a nad b
 double invert(double a); //vrati cislo s opacnym znamenkem
 
+int checkInt(double a); // zkontroluje, jestli je v promenne (double a) ulozeno cele cislo
+long long doubleToInt(double a); // prevede double na long long int
+
 //----------------------------------------------------
-int add(int a, int b){
+double add(double a, double b){
     return (a + b);
 }
 //----------------------------------------------------
-int sub(int a, int b){
+double sub(double a, double b){
     return (a - b);
 }
 //----------------------------------------------------
-int mul(int a, int b){
+double mul(double a, double b){
     return (a * b);
 }
 //----------------------------------------------------
-float divid(float a, float b){
+double divid(double a, double b){
     if(b == 0){
         fprintf(stderr,"Error, deleni nulou\n");
         return 1;
@@ -53,8 +56,8 @@ long long factorial(int a){
     return pom;
 }
 //----------------------------------------------------
-float pow(float a, float b){
-    float pom;
+double pow(double a, double b){
+    double pom;
 
     if (a == 0){
         return 0;
@@ -85,14 +88,14 @@ float pow(float a, float b){
 
 }
 //----------------------------------------------------
-float rad(float a, float b){
-    float Min = 1;
-    float Max;
-    float pom;
-    float diff;
-    float mocnina;
+double rad(double a, double b){
+    double Min = 1;
+    double Max;
+    double pom;
+    double diff;
+    double mocnina;
 
-    if((((int)b % 2)== 0) && (a < 0)){      //neni lichou odmocninou a pod odmocninou je zaporne cislo
+    if((((long long)b % 2)== 0) && (a < 0)){      //neni lichou odmocninou a pod odmocninou je zaporne cislo
         fprintf(stderr, "Error, zaporne cislo pod odmocninou");
         return -1;
     }
@@ -153,7 +156,7 @@ long long komb(int a, int b)
         exit(1);
     }
 
-    else if(a < b) // a musi byt vetsi nez b
+    else if(a < b) // a nesmi byt mensi nez b
     {
         fprintf(stderr, "Math ERROR\n");
         exit(1);
@@ -172,7 +175,7 @@ long long komb(int a, int b)
         opti_b = a - b;
         }
 
-        if(opti_b > 14) //pokud by b bylo vetsi, dochazelo by k chybe
+        if(opti_b > 14) //pokud by b bylo vetsi nez 14, dochazelo by k chybe
         {
             fprintf(stderr, "Math ERROR\n");
             exit(1);
@@ -220,7 +223,7 @@ long long komb(int a, int b)
                 max_a = 2097153;
                 break;
             case 2:
-                max_a = INT_MAX; // obvykle 2 147 483 647
+                max_a = INT_MAX; // obvykle 2 147 483 647 == (0111 1111 1111 1111 1111 1111 1111 1111)binary
                 break;
         }
 
@@ -245,4 +248,18 @@ double invert(double a)
 
     else
         return -a;
+}
+//----------------------------------------------------
+int checkInt(double a) // zkontroluje, jestli je v double a ulozeno cele cislo
+{
+    if(a - (long long)a == 0)
+        return 1;
+
+    else
+        return 0;
+}
+//----------------------------------------------------
+long long doubleToInt(double a) // prevede double na long long int
+{
+    return (long long)a;
 }
