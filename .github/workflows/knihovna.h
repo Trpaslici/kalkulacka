@@ -1,265 +1,129 @@
+#ifndef KNIHOVNA_H_INCLUDED
+#define KNIHOVNA_H_INCLUDED
+
+#include <stdio.h>
+#include <stdlib.h>
 #include <limits.h>
 
-// --------------knihovna -------------------------
+// --------------matematicke funkce-------------------------
+/**
+ * Secte 2 realna cisla
+ * \param a prvni cislo
+ * \param b druhe cislo
+ * \return (a+b)
+ */
+double add(double a, double b);
+//----------------------------------------------------------
+/**
+ * Odecte od sebe 2 realna cisla
+ * \param a prvni cislo
+ * \param b druhe cislo
+ * \return (a-b)
+ */
+double sub(double a, double b);
+//----------------------------------------------------------
+/**
+ * Vynasobi 2 realna cisla
+ * \param a prvni cislo
+ * \param b druhe cislo
+ * \return (a*b)
+ */
+double mul(double a, double b);
+//----------------------------------------------------------
+/**
+ * Vydeli 2 realna cisla
+ * \param a delenec
+ * \param b delitel
+ * \if (b == 0)
+ *      Vrati chybu a ukonci se
+ * \endif
+ * \return (a/b)
+ */
+double divid(double a, double b);
+//----------------------------------------------------------
+/**
+ * Vypocita faktorial celeho kladneho cisla
+ * \pre Pred uzitim funkce by mel volajici overit, zda parametr a je cele cislo
+ * \param a cele kladne cislo
+ * \if (a < 0)
+ *      Vrati chybu a ukonci se
+ * \endif
+ * \if (a > 20)
+ *      Vrati chybu a ukonci se
+ * \endif
+ * \return 1 pokud a == 0
+ * \return a!
+ */
+long long factorial(int a);
+//----------------------------------------------------------
+/**
+ * Vypocita mocninu a^b
+ * \param a mocnenec
+ * \param b mocnitel
+ * \return 0 pokud a ==  0
+ * \return 1 pokud b == 0 && a > 0
+ * \return -1 pokud b == 0 && a < 0
+ * \return a^b
+ */
+double pow(double a, double b);
+//----------------------------------------------------------
+/**
+ * Vypocita odmocninu b|/a
+ * \param a odmocnenec
+ * \param b odmocnitel
+ * \if (zaporne cislo pod sudou odmocninou)
+ *      Vrati chybu a ukonci se
+ * \endif
+ * \return b|/a
+ */
+double rad(double a, double b);
+//----------------------------------------------------------
+/**
+ * Vypocita kombinacni cislo a nad b
+ * == pocet zpusobu, jak vybrat b-prvkovou podmnozinu z a-prvkove mnoziny
+ * a nad b = (a*(a-1)*(a-2)*...*(a-b+1)) / b!
+ * \pre Pred uzitim funkce by mel volajici overit, zda jsou parametry a, b cela cisla
+ * \param a pocet prvku puvodni mnoziny
+ * \param b pocet prvku hledane podmnoziny
+ * \if (a < 0 nebo b < 0)
+ *      Vrati chybu a ukonci se
+ * \endif
+ * \if (a < b)
+ *      Vrati chybu a ukonci se
+ * \endif
+ * \return 1 pokud b = 0
+ * \return 1 pokud a = b
+ * \if (a nebo b je mimo povoleny rozsah)
+ *      Vrati chybu a ukonci se
+ * \endif
+ * \return (a nad b)
+ */
+long long komb(int a, int b);
+//----------------------------------------------------------
+/**
+ * Vrati cislo s opacnym znamenkem
+ * \param a libovolne realne cislo
+ * \return 0 pokud a == 0
+ * \return -a
+ */
+double invert(double a);
 
-double add(double a, double b);  //secte 2 cisla
-double sub(double a, double b);  //odecte 2 cisla
-double mul(double a, double b);  //vynasobi 2 cisla
-double divid(double a, double b);  //vydeli 2 cisla
-long long factorial(int a); //vypocita faktorial
-double pow(double a, double b);  //vypocita mocninu a^b
-double rad(double a, double b);    ////vypocita odmocninu b|/a
-long long komb(int a, int b); //vypocita kombinacni cislo a nad b
-double invert(double a); //vrati cislo s opacnym znamenkem
+// -----------------utilities-------------------------------
 
-int checkInt(double a); // zkontroluje, jestli je v promenne (double a) ulozeno cele cislo
-long long doubleToInt(double a); // prevede double na long long int
+/**
+ * Zkontroluje, jestli je v promenne a ulozeno cele cislo
+ * \param a zkoumane cislo
+ * \return 1 pokud se jedna o cele cislo
+ * \return 0 pokud se nejedna o cele cislo
+ */
+int checkInt(double a);
+//----------------------------------------------------------
+/**
+ * Prevede double na long long int
+ * \pre Pred uzitim funkce by mel volajici overit, jestli je v promenne a ulozeno cele cislo
+ * \param a libovolne realne cislo
+ * \return (long long)a
+ */
+long long doubleToInt(double a);
 
-//----------------------------------------------------
-double add(double a, double b){
-    return (a + b);
-}
-//----------------------------------------------------
-double sub(double a, double b){
-    return (a - b);
-}
-//----------------------------------------------------
-double mul(double a, double b){
-    return (a * b);
-}
-//----------------------------------------------------
-double divid(double a, double b){
-    if(b == 0){
-        fprintf(stderr,"Error, deleni nulou\n");
-        return 1;
-    }
-
-    else {
-        return (a / b);
-    }
-}
-//----------------------------------------------------
-long long factorial(int a){
-    long long pom = 1;
-    if(a < 0){
-        fprintf(stderr, "Error, zadejte kladne cele cislo\n");
-        exit(1);
-    }
-    else if(a == 0){
-        return 1;
-    }
-    else{
-        for(int i = a; i > 1; i--){
-            pom = pom * i;
-        }
-    }
-    return pom;
-}
-//----------------------------------------------------
-double pow(double a, double b){
-    double pom;
-
-    if (a == 0){
-        return 0;
-    }
-    if((b == 0) && (a > 0)){
-        return 1;
-    }
-    if((b == 0) && (a < 0)){
-        return -1;
-    }
-    if (b < 0){
-        b = b * (-1);
-        pom = a;
-        while(b > 1){
-            pom = pom * a;
-            b--;
-        }
-    return (1 / pom);
-    }
-    else{
-        pom = a;
-        while(b > 1){
-            pom = pom * a;
-            b--;
-        }
-        return pom;
-    }
-
-}
-//----------------------------------------------------
-double rad(double a, double b){
-    double Min = 1;
-    double Max;
-    double pom;
-    double diff;
-    double mocnina;
-
-    if((((long long)b % 2)== 0) && (a < 0)){      //neni lichou odmocninou a pod odmocninou je zaporne cislo
-        fprintf(stderr, "Error, zaporne cislo pod odmocninou");
-        return -1;
-    }
-    if(a > 0){      //kladna odmocnina
-        Max = a;
-        pom = (Min + Max)/2;
-        do{
-            mocnina = pow(pom, b);      //zkouska vysledku pomoci funkce pow, hledani pomocí puleni intervalu
-            if(a > mocnina){
-
-                Min = pom;
-            }
-            if(a < mocnina){
-                Max = pom;
-            }
-            diff = pom;
-            pom = (Min + Max)/2;
-            diff = diff - pom;      //rodil mezi vypocty
-            if(diff < 0){
-                diff = diff * (-1); //abslutni hodnota rozdilu
-            }
-        }while(diff > 0.0001);
-        return pom;
-    }
-    else{           // zaporna odmocnina
-        Min = a;    //zaporna odmocnina se lisi prohozenymi hranicemi
-        Max = 0;
-        pom = (Min + Max)/2;
-        do{
-            mocnina = pow(pom, b);
-            if(a > mocnina){
-
-                Min = pom;
-            }
-            if(a < mocnina){
-                Max = pom;
-            }
-            diff = pom;
-            pom = (Min + Max)/2;
-            diff = diff - pom;
-            if(diff < 0){
-                diff = diff * (-1);
-            }
-        }while(diff > 0.0001);
-        return pom;
-    }
-}
-//----------------------------------------------------
-long long komb(int a, int b)
-{
-    long long citatel = 1;
-    int opti_b = b;
-    int max_a = 0;
-
-    if(a < 0 || b < 0) // a, b musi byt z N_0
-    {
-        fprintf(stderr, "Math ERROR\n");
-        exit(1);
-    }
-
-    else if(a < b) // a nesmi byt mensi nez b
-    {
-        fprintf(stderr, "Math ERROR\n");
-        exit(1);
-    }
-
-    else if(b == 0) // 'cokoliv' nad 0 = 1
-        return 1;
-
-    else if(a == b) // a nad a = 1
-        return 1;
-
-    else // jinak vypocitej jako: a nad b = (a*(a-1)*(a-2)*...*(a-b+1)) / factorial(b)
-    {
-        if(b > a/2) // a nad b = a nad (a-b) -- pokud je to vhodne
-        {
-        opti_b = a - b;
-        }
-
-        if(opti_b > 14) //pokud by b bylo vetsi nez 14, dochazelo by k chybe
-        {
-            fprintf(stderr, "Math ERROR\n");
-            exit(1);
-        }
-
-        if(opti_b == 1) // 'cokoliv' nad 1 = 'cokoliv'
-            return a;
-
-        switch(opti_b) // osetreni preteceni promenne citatel (basically)
-        {
-            case 14:        // pokud b = 14, potom a muze byt maximalne 29
-                max_a = 29;
-                break;
-            case 13:        // atd...
-                max_a = 35;
-                break;
-            case 12:
-                max_a = 42;
-                break;
-            case 11:
-                max_a = 58;
-                break;
-            case 10:
-                max_a = 83;
-                break;
-            case 9:
-                max_a = 132;
-                break;
-            case 8:
-                max_a = 238;
-                break;
-            case 7:
-                max_a = 515;
-                break;
-            case 6:
-                max_a = 1450;
-                break;
-            case 5:
-                max_a = 6210;
-                break;
-            case 4:
-                max_a = 55110;
-                break;
-            case 3:
-                max_a = 2097153;
-                break;
-            case 2:
-                max_a = INT_MAX; // obvykle 2 147 483 647 == (0111 1111 1111 1111 1111 1111 1111 1111)binary
-                break;
-        }
-
-        if(a > max_a)
-        {
-            fprintf(stderr, "Math ERROR\n");
-            exit(1);
-        }
-
-        for(int i = a; i >= (a - opti_b + 1); i--) // nakonec samotny vypocet :)
-        {
-            citatel = i * citatel;
-        }
-        return (citatel / factorial(opti_b));
-    }
-}
-//----------------------------------------------------
-double invert(double a)
-{
-    if(a == 0)
-        return 0;
-
-    else
-        return -a;
-}
-//----------------------------------------------------
-int checkInt(double a) // zkontroluje, jestli je v double a ulozeno cele cislo
-{
-    if(a - (long long)a == 0)
-        return 1;
-
-    else
-        return 0;
-}
-//----------------------------------------------------
-long long doubleToInt(double a) // prevede double na long long int
-{
-    return (long long)a;
-}
+#endif // KNIHOVNA_H_INCLUDED
