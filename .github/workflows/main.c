@@ -21,11 +21,11 @@ int main(int argc, char* argv[])
         A = atof(argv[1]);
      
         if (strcmp(argv[2], "factorial") == 0) {
-            factorial(A, &vysledek);
+            vysledek = factorial(A);
             return vysledek;
         }
         if (strcmp(argv[2], "invert") == 0) {
-            invert(A, &vysledek);
+            vysledek = invert(A);
             return vysledek;
         }
         else {
@@ -37,31 +37,31 @@ int main(int argc, char* argv[])
         B = atof(argv[3]);
 
         if (strcmp(argv[2], "add") == 0) {
-            add(A, B, &vysledek);
+            vysledek = add(A, B);
             return vysledek;
         }
         if (strcmp(argv[2], "sub") == 0) {
-            sub(A, B, &vysledek);
+            vysledek = sub(A, B);
             return vysledek;
         }
         if (strcmp(argv[2], "mul") == 0) {
-            mul(A, B, &vysledek);
+            vysledek = mul(A, B);
             return vysledek;
         }
         if (strcmp(argv[2], "divid") == 0) {
-            divid(A, B, &vysledek);
+            vysledek = divid(A, B);
             return vysledek;
         }
         if (strcmp(argv[2], "pow") == 0) {
-            pow(A, B, &vysledek);
+            vysledek = pow(A, B);
             return vysledek;
         }
         if (strcmp(argv[2], "rad") == 0) {
-            rad(A, B, &vysledek);
+            vysledek = rad(A, B);
             return vysledek;
         }
         if (strcmp(argv[2], "komb") == 0) {
-            komb(A, B, &vysledek);
+            vysledek = komb(A, B);
             return vysledek;
         }
         else {
