@@ -10,3 +10,13 @@
 /src/Profiling/Profiling/Debug
 /src/Profiling/Profiling/Release
 /src/Testy/MaafLajbrryTests/GUI/Debug
+*.ilk
+*.iobj
+*.ipdb
+*.pdb
+/src/.vs/Karkulacka/v15
+/src/GUI/Debug
+/src/GUI/Release
+/src/Profiling/Debug
+/src/Profiling/Release
+/src/Testy/Release
