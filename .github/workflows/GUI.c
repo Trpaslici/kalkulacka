@@ -1,3 +1,9 @@
+/**
+ * \file GUI.c
+ *
+ * \brief Funkce reagujici na interakci s GUI
+ */
+
 #include <stdlib.h>
 #include <sys/types.h>
 #include <signal.h>
@@ -17,10 +23,10 @@
 #define ROOT 6
 #define COMBINATORY 7
 
-//vypisuje cisla do labelu
+/** vypisuje cisla do labelu */
 void write_in_label (char* str1);
 
-//odesle informace do funkce ke spocitani
+/**odesle informace do funkce ke spocitani */
 void do_calculations();
 
 double num1;
@@ -52,15 +58,15 @@ GtkWidget	*button_comb;
 GtkWidget	*button_AC;
 GtkWidget	*button_sign;
 GtkWidget	*label1;
-GtkBuilder	*builder; 
+GtkBuilder	*builder;
 
 int main(int argc, char *argv[]) {
 
 	gtk_init(&argc, &argv); // init Gtk
 
- 
+
 	builder = gtk_builder_new_from_file ("GUI.glade");
- 
+
 	window1 = GTK_WIDGET(gtk_builder_get_object(builder, "window"));
 
 	g_signal_connect(window, "destroy", G_CALLBACK(gtk_main_quit), NULL);
@@ -96,8 +102,8 @@ int main(int argc, char *argv[]) {
     color.red = 0xcccc;
     color.green = 0xcccc;
     color.blue = 0xd900;
-    gtk_widget_modify_bg(GTK_WIDGET(window1), GTK_STATE_NORMAL, &color);	
-	
+    gtk_widget_modify_bg(GTK_WIDGET(window1), GTK_STATE_NORMAL, &color);
+
 	gtk_widget_show(window1);
 
 	gtk_main();
@@ -105,61 +111,93 @@ int main(int argc, char *argv[]) {
 	return EXIT_SUCCESS;
 	}
 
-//stisknuti tlacitka .
+/**
+ * \brief stisknuti tlacitka '.'
+ */
 void	on_button_dot_clicked (GtkButton *b) {
 	write_in_label(".");
 	}
-//stisknuti tlacitka 0
+
+/**
+ * \brief stisknuti tlacitka '0'
+ */
 void	on_button_zero_clicked (GtkButton *b) {
 	write_in_label("0");
 	}
-//stisknuti tlacitka =
+
+/**
+ * \brief stisknuti tlacitka '='
+ */
 void	on_button_eq_clicked (GtkButton *b) {
 
 	}
-//stisknuti tlacitka 1
+
+/**
+ * \brief stisknuti tlacitka '1'
+ */
 void	on_button_one_clicked (GtkButton *b) {
 	write_in_label("1");
 	}
-//stisknuti tlacitka 2
+
+/**
+ * \brief stisknuti tlacitka '2'
+ */
 void	on_button_two_clicked (GtkButton *b) {
 	write_in_label("2");
 	}
-//stisknuti tlacitka 3
+
+/**
+ * \brief stisknuti tlacitka '3'
+ */
 void	on_button_three_clicked (GtkButton *b) {
 	write_in_label("3");
 	}
-//stisknuti tlacitka 4
+
+/**
+ * \brief stisknuti tlacitka '4'
+ */
 void	on_button_four_clicked (GtkButton *b) {
 	write_in_label("4");
 	}
 
-//stisknuti tlacitka 5
+/**
+ * \brief stisknuti tlacitka '5'
+ */
 void	on_button_five_clicked (GtkButton *b) {
 	write_in_label("5");
 	}
 
-//stisknuti tlacitka 6
+/**
+ * \brief stisknuti tlacitka '6'
+ */
 void	on_button_six_clicked (GtkButton *b) {
 	write_in_label("6");
 	}
 
-//stisknuti tlacitka 7
+/**
+ * \brief stisknuti tlacitka '7'
+ */
 void	on_button_seven_clicked (GtkButton *b) {
 	write_in_label("7");
 	}
 
-//stisknuti tlacitka 8
+/**
+ * \brief stisknuti tlacitka '8'
+ */
 void	on_button_eight_clicked (GtkButton *b) {
 	write_in_label("8");
 	}
 
-//stisknuti tlacitka 9
+/**
+ * \brief stisknuti tlacitka '9'
+ */
 void	on_button_nine_clicked (GtkButton *b) {
 	write_in_label("9");
 	}
 
-//stisknuti tlacitka deleno
+/**
+ * \brief stisknuti tlacitka deleno
+ */
 void	on_button_div_clicked (GtkButton *b) {
 	if (operator == 0) {
 		num1 = strtod(gtk_label_get_text(label1));
@@ -172,7 +210,9 @@ void	on_button_div_clicked (GtkButton *b) {
 	}
 }
 
-//stisknuti tlacitka krat
+/**
+ * \brief stisknuti tlacitka krat
+ */
 void	on_button_times_clicked (GtkButton *b) {
 	if (operator == 0) {
 		num1 = strtod(gtk_label_get_text(label1));
@@ -185,7 +225,9 @@ void	on_button_times_clicked (GtkButton *b) {
 	}
 }
 
-//stisknuti tlacitka minus
+/**
+ * \brief stisknuti tlacitka minus
+ */
 void	on_button_minus_clicked (GtkButton *b) {
 	if (operator == 0) {
 		num1 = strtod(gtk_label_get_text(label1));
@@ -198,7 +240,9 @@ void	on_button_minus_clicked (GtkButton *b) {
 	}
 }
 
-//stisknuti tlacitka plus
+/**
+ * \brief stisknuti tlacitka plus
+ */
 void	on_button_plus_clicked (GtkButton *b) {
 	if (operator == 0) {
 		num1 = strtod(gtk_label_get_text(label1));
@@ -211,7 +255,9 @@ void	on_button_plus_clicked (GtkButton *b) {
 	}
 }
 
-//stisknuti tlacitka faktorial
+/**
+ * \brief stisknuti tlacitka faktorial
+ */
 void	on_button_fact_clicked (GtkButton *b) {
 	num1 = strtod(gtk_label_get_text(label1));
 	factorial(num1);
@@ -221,7 +267,9 @@ void	on_button_fact_clicked (GtkButton *b) {
 	operator = 0;
 	}
 
-//stisknuti tlacitka mocniny
+/**
+ * \brief stisknuti tlacitka mocniny
+ */
 void	on_button_pwr_clicked (GtkButton *b) {
 	if (operator == 0) {
 		num1 = strtod(gtk_label_get_text(label1));
@@ -234,7 +282,9 @@ void	on_button_pwr_clicked (GtkButton *b) {
 	}
 }
 
-//stisknuti tlacitka odmocniny
+/**
+ * \brief stisknuti tlacitka odmocniny
+ */
 void	on_button_root_clicked (GtkButton *b) {
 	if (operator == 0) {
 		num1 = strtod(gtk_label_get_text(label1));
@@ -247,7 +297,9 @@ void	on_button_root_clicked (GtkButton *b) {
 	}
 }
 
-//stisknuti tlacitka komb. cisla
+/**
+ * \brief stisknuti tlacitka kombinacniho cisla
+ */
 void	on_button_comb_clicked (GtkButton *b) {
 	if (operator == 0) {
 		num1 = strtod(gtk_label_get_text(label1));
@@ -260,7 +312,9 @@ void	on_button_comb_clicked (GtkButton *b) {
 	}
 }
 
-//stisknuti tlacitka AC
+/**
+ * \brief stisknuti tlacitka "AC"
+ */
 void	on_button_AC_clicked (GtkButton *b) {
 	num1 = 0;
 	num2 = 0;
@@ -268,14 +322,18 @@ void	on_button_AC_clicked (GtkButton *b) {
 	gtk_label_set_text (GTK_LABEL(label1), (const gchar* ) "0");
 }
 
-//stisknuti tlacitka +/-
+/**
+ * \brief stisknuti tlacitka "+/-"
+ */
 void	on_button_sign_clicked (GtkButton *b) {
 	num1 = strtod(gtk_label_get_text(label1));
 	invert(num1);
-	write_in_label();			//TODO			
+	write_in_label();			//TODO
 }
 
-//vypisuje cisla do labelu
+/**
+ * \brief vypisuje cisla do labelu
+ */
 void write_in_label (char* str1) {
 	const gchar* str2 = gtk_label_get_text(label1);
 	if (g_strstr(str2, "0") == NULL) {
@@ -287,6 +345,9 @@ void write_in_label (char* str1) {
 	}
 }
 
+/**
+ * \brief vypocita vysledek na zaklade zvoleneho operatoru
+ */
 void do_calculations() {
 	double result;
 	switch (operator) {
@@ -319,3 +380,5 @@ void do_calculations() {
 
 	write_in_label();				//TODO
 }
+
+/*** Konec souboru GUI.c ***/
