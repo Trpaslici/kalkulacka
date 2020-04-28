@@ -1,3 +1,9 @@
+/**
+ * \file knihovna.c
+ *
+ * \brief Knihovna obsahujici definice matematickych funkci
+ */
+
 #include "knihovna.h"
 
 double add(double a, double b){ // secte 2 cisla
@@ -251,3 +257,5 @@ long long doubleToInt(double a) // prevede double na long long int
 {
     return (long long)a;
 }
+
+/*** Konec souboru knihovna.c ***/

@@ -1,3 +1,9 @@
+/**
+ * \file knihovna.h
+ *
+ * \brief Knihovna obsahujici deklarace matematickych funkci
+ */
+
 #ifndef KNIHOVNA_H_INCLUDED
 #define KNIHOVNA_H_INCLUDED
 
@@ -127,3 +133,5 @@ int checkInt(double a);
 long long doubleToInt(double a);
 
 #endif // KNIHOVNA_H_INCLUDED
+
+/*** Konec souboru knihovna.h ***/

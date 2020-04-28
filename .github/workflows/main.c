@@ -1,3 +1,9 @@
+/**
+ * \file main.c
+ *
+ * \brief Hlavni zdrojovy soubor, ktery vola matematicke funkce
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -9,7 +15,7 @@ int main(int argc, char* argv[])
     double A;
     double B;
 
-    if (argc < 3){ //nedosatek argumentu 
+    if (argc < 3){ //nedosatek argumentu
         fprintf(stderr, "zadejte cislo");
         return 1;
     }
@@ -17,9 +23,9 @@ int main(int argc, char* argv[])
         fprintf(stderr, "spatny pocet argumentu");
         return 1;
     }
-    if (argc == 3) { 
+    if (argc == 3) {
         A = atof(argv[1]);
-     
+
         if (strcmp(argv[2], "factorial") == 0) {
             vysledek = factorial(A);
             return vysledek;
@@ -71,3 +77,5 @@ int main(int argc, char* argv[])
 
     return 0;
 }
+
+/*** Konec souboru main.c ***/
