@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "knihovna.h"
+#include "knihovna.c"
 // ******propojeni projektu*****
 
 
@@ -41,6 +41,6 @@ double profiling() {
     N--;
     s = divid(pom, N);
     s = rad(s, 2);
-   
+
     return s;
 }
