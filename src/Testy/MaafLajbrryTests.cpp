@@ -1,15 +1,14 @@
-
-#include "gtest/gtest.h"
-#include "tdd_code.h"
+﻿#include "gtest.h"
+#include "MaafLajbrry.h"
 
 class MathTest : public ::testing::Test
 {
 protected:
-    virtual void SetUp() {
+	virtual void SetUp() {
 		srand(time(NULL));
-    }
+	}
 
-    MaafLajbrry lib;
+	MaafLajbrry lib;
 };
 
 
@@ -18,8 +17,8 @@ TEST_F(MathTest, Soucet)
 	double aScitanec = rand();
 	double bScitanec = rand();
 	double soucet1 = lib.add(aScitanec, bScitanec);
-	EXPECT_EQ(soucet1, aScitanec+bScitanec);
-	
+	EXPECT_EQ(soucet1, aScitanec + bScitanec);
+
 	double soucet2 = lib.add(bScitanec, aScitanec);
 	EXPECT_EQ(soucet1, soucet2);
 
@@ -113,10 +112,10 @@ TEST_F(MathTest, Mocnina)
 {
 
 
-	double aZaklad = rand() %1000 + 1;
-	double bZaklad = rand() %1000;
-	double aExponent = rand()%30;
-	double bExponent = rand()%30;
+	double aZaklad = rand() % 1000 + 1;
+	double bZaklad = rand() % 1000;
+	double aExponent = rand() % 30;
+	double bExponent = rand() % 30;
 	double aMocnina;
 	double bMocnina;
 
@@ -178,10 +177,10 @@ TEST_F(MathTest, Odmocnina)
 	aOdmocnenec++;
 
 	EXPECT_ANY_THROW(lib.rad(0 - aOdmocnenec, 2 * aOdmocnitel));
-	
+
 }
 TEST_F(MathTest, KombinacniCislo)
-{	
+{
 
 	std::map<int, int> mapHranice = {
 		{1, INT_MAX},
@@ -230,4 +229,9 @@ TEST_F(MathTest, KombinacniCislo)
 		EXPECT_EQ(aKombinace, bKombinace);
 
 	}
+}
+
+int main(int argc, char **argv) {
+	::testing::InitGoogleTest(&argc, argv);
+	return RUN_ALL_TESTS();
 }

@@ -1,12 +1,10 @@
 ﻿#include <stdlib.h>
 #include <sys/types.h>
 #include <signal.h>
-//#include <unistd.h>
 #include <string.h>
 #include <gtk/gtk.h>
 #include <gtk/gtkx.h>
 #include <math.h>
-//#include "knihovna.h"
 #include "MaafLajbrry.h"
 #include <ctype.h>
 
@@ -325,7 +323,7 @@ void	on_button_sign_clicked(GtkButton *b) {
 }
 
 //stisknuti tlacitka help
-void	on_button_hlep_clicked(GtkButton *b) {
+void	on_button_help_clicked(GtkButton *b) {
 	
 }
 

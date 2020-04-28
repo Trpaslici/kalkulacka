@@ -15,10 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Profiling.cpp">
+    <ClCompile Include="GUI.cpp">
       <Filter>Zdrojové soubory</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\knihovna\MaafLajbrry.cpp">
+    <ClCompile Include="..\knihovna\MaafLajbrry.cpp">
       <Filter>Zdrojové soubory</Filter>
     </ClCompile>
   </ItemGroup>

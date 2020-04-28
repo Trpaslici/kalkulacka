@@ -18,7 +18,7 @@
     <ClCompile Include="MaafLajbrryTests.cpp">
       <Filter>Zdrojové soubory</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\knihovna\MaafLajbrry.cpp">
+    <ClCompile Include="..\knihovna\MaafLajbrry.cpp">
       <Filter>Zdrojové soubory</Filter>
     </ClCompile>
   </ItemGroup>
