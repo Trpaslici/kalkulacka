@@ -7,6 +7,8 @@
 #include <math.h>
 #include "MaafLajbrry.h"
 #include <ctype.h>
+#include <windows.h>
+#include <shellapi.h>
 
 #define PLUS 1
 #define MINUS 2
@@ -157,9 +159,9 @@ int main(int argc, char *argv[]) {
 	gtk_builder_connect_signals(builder, NULL);
 
 	gtk_widget_show(window1);
-
+	
 	gtk_main();
-
+	
 	return EXIT_SUCCESS;
 }
 
@@ -188,7 +190,7 @@ void fill_first_or_second()
 
 //stisknuti tlacitka .
 void	on_button_dot_clicked(GtkButton *b) {
-	write_in_label(".");
+	write_in_label(",");
 }
 //stisknuti tlacitka 0
 void	on_button_zero_clicked(GtkButton *b) {
@@ -279,12 +281,18 @@ void	on_button_plus_clicked(GtkButton *b) {
 
 //stisknuti tlacitka faktorial
 void	on_button_fact_clicked(GtkButton *b) {
-	MaafLajbrry lajbrry;
-	num1 = strtod(gtk_label_get_text(GTK_LABEL(label1)), nullptr);
-	num2 = lajbrry.factorial(num1);
-	oper = EQUAL;
-	gtk_label_set_text(GTK_LABEL(label1), (const gchar*) "0");
-	do_calculations();
+	try
+	{
+		MaafLajbrry lajbrry;
+		num1 = strtod(gtk_label_get_text(GTK_LABEL(label1)), nullptr);
+		num2 = lajbrry.factorial(num1);
+		oper = EQUAL;
+		gtk_label_set_text(GTK_LABEL(label1), (const gchar*) "0");
+		do_calculations();
+	}
+	catch (...) {
+		on_button_AC_clicked(nullptr);
+	}
 }
 
 //stisknuti tlacitka mocniny
@@ -324,7 +332,7 @@ void	on_button_sign_clicked(GtkButton *b) {
 
 //stisknuti tlacitka help
 void	on_button_help_clicked(GtkButton *b) {
-	
+	ShellExecute(NULL, L"open", L"help.html", NULL, NULL, SW_SHOWNORMAL);
 }
 
 //vypisuje cisla do labelu
@@ -349,31 +357,37 @@ void write_in_label(const char* str1) {
 void do_calculations() {
 	double result;
 	MaafLajbrry lajbrry;
-	switch (oper) {
-	case (PLUS):
-		result = lajbrry.add(num1, num2);
-		break;
-	case (MINUS):
-		result = lajbrry.sub(num1, num2);
-		break;
-	case (TIMES):
-		result = lajbrry.mul(num1, num2);
-		break;
-	case (DIVIDE):
-		result = lajbrry.divid(num1, num2);
-		break;
-	case (POWER):
-		result = lajbrry.pow(num1, num2);
-		break;
-	case (ROOT):
-		result = lajbrry.rad(num1, num2);
-		break;
-	case (COMBINATORY):
-		result = lajbrry.komb(num1, num2);
-		break;
-	default:
-		result = num2;
-		break;
+	try
+	{
+		switch (oper) {
+		case (PLUS):
+			result = lajbrry.add(num1, num2);
+			break;
+		case (MINUS):
+			result = lajbrry.sub(num1, num2);
+			break;
+		case (TIMES):
+			result = lajbrry.mul(num1, num2);
+			break;
+		case (DIVIDE):
+			result = lajbrry.divid(num1, num2);
+			break;
+		case (POWER):
+			result = lajbrry.pow(num1, num2);
+			break;
+		case (ROOT):
+			result = lajbrry.rad(num1, num2);
+			break;
+		case (COMBINATORY):
+			result = lajbrry.komb(num1, num2);
+			break;
+		default:
+			result = num2;
+			break;
+		}
+	}
+	catch (...) {
+		on_button_AC_clicked(nullptr);
 	}
 
 	//oper = 0;
@@ -381,11 +395,11 @@ void do_calculations() {
 	num2 = 0;
 
 	char tmp[50];
-	if (fabs(result - (int) result) < CALC_EPSILON)
-		snprintf(tmp, 50, "%d", (long) result);
+	if (fabs(result - (int) (result + 0.5)) < CALC_EPSILON)
+		snprintf(tmp, 50, "%d", (long) (result + 0.5));
 	else
 		snprintf(tmp, 50, "%f", result);
-	write_in_label((const gchar*)tmp);				//TODO
+	write_in_label((const gchar*)tmp);
 	output_written = 1;
 
 	if (eq_pressed == 1)

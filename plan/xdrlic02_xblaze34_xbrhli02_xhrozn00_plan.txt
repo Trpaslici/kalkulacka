@@ -1,0 +1,19 @@
+Stanovené termíny:
+5.4.2020 - Testy, Program + matematická knihovna, Grafické rozhraní
+12.4.2020 - Profiling, Makefile, Instalátor + Odinstalátor
+15.4.2020 - Dokumentace, Nápověda
+
+Přidělení úkolů na projektu jednotlivým řešitelům:
+Michal Blažek - Program + matematická knihovna, Instalátor + Odinstalátor, Nápověda
+Vojtěch Brhlík - Grafické rozhraní, Profiling, Dokumentace
+Alena Drlíčková - Testy, Profiling, Instalátor + Odinstalátor, Dokumentace
+Kristýna Hrozníčková - Program + matematická knihovna, Profiling, Makefile
+
+Zvolené komunikační kanály pro komunikaci v týmu:
+Microsoft Teams
+Discord
+Messenger
+
+Zvolený systém pro správu verzí:
+GitHub
+Uživatele ivskontrola jsme pozvali do týmu Trpaslici, kde bude mít možnost nahlížet do repozitáře "kalkulacka"

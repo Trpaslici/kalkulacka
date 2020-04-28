@@ -140,11 +140,11 @@ TEST_F(MathTest, Mocnina)
 
 	EXPECT_EQ(lib.pow(aZaklad, 1), aZaklad);
 
-	//EXPECT_EQ(lib.pow(0, 0), 1);
+	EXPECT_EQ(lib.pow(0, 0), 1);
 
 	EXPECT_EQ(lib.pow(aZaklad, 0), 1);
 
-	//EXPECT_EQ(lib.pow(0 - aZaklad, 0), 1);
+	EXPECT_EQ(lib.pow(0 - aZaklad, 0), 1);
 
 }
 

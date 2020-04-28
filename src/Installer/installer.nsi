@@ -37,6 +37,7 @@ Section
     File "..\..\binarky\karkulacka.exe"
     File "..\..\binarky\*.dll"
     File "..\..\binarky\GUI.glade"
+    File "..\..\binarky\help.html"
 
     # create the uninstaller
     WriteUninstaller "$INSTDIR\karkulacka\uninstall.exe"
