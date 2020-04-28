@@ -25,8 +25,7 @@ double profiling() {
 	double s; //odchylka
 
 	double num;
-	FILE * fin = fopen("C:\\Users\\Alenka\\FIT\\IVS\\ivs_project_2_2020\\GIT\\src\\Profiling\\10sempls.txt", "r");
-	while (fscanf(fin, "%lf", &num) != EOF) //nacita double do num, oddeluje se bilym znakem
+	while (fscanf(stdin, "%lf", &num) != EOF) //nacita double do num, oddeluje se bilym znakem
 	{
 		prumer = knihovna.add(prumer, num);
 
