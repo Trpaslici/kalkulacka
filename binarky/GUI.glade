@@ -4,8 +4,9 @@
   <requires lib="gtk+" version="3.20"/>
   <object class="GtkWindow" id="window1">
     <property name="width_request">440</property>
-    <property name="height_request">580</property>
+    <property name="height_request">600</property>
     <property name="can_focus">False</property>
+    <property name="resizable">False</property>
     <property name="default_width">348</property>
     <property name="default_height">545</property>
     <child type="titlebar">
@@ -14,7 +15,7 @@
     <child>
       <object class="GtkFixed" id="fixed1">
         <property name="width_request">440</property>
-        <property name="height_request">580</property>
+        <property name="height_request">600</property>
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <child>
@@ -392,6 +393,21 @@
           <packing>
             <property name="x">365</property>
             <property name="y">145</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="button_help">
+            <property name="label" translatable="yes">help</property>
+            <property name="width_request">300</property>
+            <property name="height_request">30</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <signal name="clicked" handler="on_button_help_clicked" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">70</property>
+            <property name="y">560</property>
           </packing>
         </child>
       </object>
