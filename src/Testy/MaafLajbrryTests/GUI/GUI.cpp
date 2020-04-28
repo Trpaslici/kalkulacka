@@ -49,6 +49,7 @@ void	on_button_root_clicked(GtkButton *b);
 void	on_button_comb_clicked(GtkButton *b);
 void	on_button_AC_clicked(GtkButton *b);
 void	on_button_sign_clicked(GtkButton *b);
+void	on_button_help_clicked(GtkButton *b);
 
 
 double num1;
@@ -82,6 +83,7 @@ GtkWidget	*button_root;
 GtkWidget	*button_comb;
 GtkWidget	*button_AC;
 GtkWidget	*button_sign;
+GtkWidget	*button_help;
 GtkWidget	*label1;
 GtkBuilder	*builder;
 
@@ -123,6 +125,7 @@ int main(int argc, char *argv[]) {
 	gtk_builder_add_callback_symbol(builder, "on_button_comb_clicked", G_CALLBACK(on_button_comb_clicked));
 	gtk_builder_add_callback_symbol(builder, "on_button_AC_clicked", G_CALLBACK(on_button_AC_clicked));
 	gtk_builder_add_callback_symbol(builder, "on_button_sign_clicked", G_CALLBACK(on_button_sign_clicked));
+	gtk_builder_add_callback_symbol(builder, "on_button_help_clicked", G_CALLBACK(on_button_help_clicked));
 
 	
 	fixed1 = GTK_WIDGET(gtk_builder_get_object(builder, "fixed1"));
@@ -147,7 +150,8 @@ int main(int argc, char *argv[]) {
 	button_root = GTK_WIDGET(gtk_builder_get_object(builder, "button_root"));
 	button_comb = GTK_WIDGET(gtk_builder_get_object(builder, "button_comb"));
 	button_AC = GTK_WIDGET(gtk_builder_get_object(builder, "button_AC"));
-	button_AC = GTK_WIDGET(gtk_builder_get_object(builder, "button_sign"));
+	button_sign = GTK_WIDGET(gtk_builder_get_object(builder, "button_sign"));
+	button_help = GTK_WIDGET(gtk_builder_get_object(builder, "button_help"));
 	label1 = GTK_WIDGET(gtk_builder_get_object(builder, "label1"));
 	
 	//gtk_widget_override_background_color(GTK_WIDGET(window1), GTK_STATE_FLAG_NORMAL, &color);
@@ -318,6 +322,11 @@ void	on_button_sign_clicked(GtkButton *b) {
 	oper = EQUAL;
 	gtk_label_set_text(GTK_LABEL(label1), (const gchar*) "0");
 	do_calculations();
+}
+
+//stisknuti tlacitka help
+void	on_button_hlep_clicked(GtkButton *b) {
+	
 }
 
 //vypisuje cisla do labelu
