@@ -1,0 +1,1289 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kalkulacka: Dokumentace souboru C:/Users/bpara/Documents/FIT/semestr2/IVS/proj2/kalkulacka/.github/workflows/GUI.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="ikona.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Kalkulacka
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generováno programem Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Hledat');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Hledat');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_2baeb9b2ab4545faf9e2316474ff25e0.html">.github</a></li><li class="navelem"><a class="el" href="dir_d8b1e428b62f7cf7dbb058855eb21874.html">workflows</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Definice maker</a> &#124;
+<a href="#func-members">Funkce</a> &#124;
+<a href="#var-members">Proměnné</a>  </div>
+  <div class="headertitle">
+<div class="title">Dokumentace souboru GUI.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Funkce reagujici na interakci s GUI.  
+<a href="#details">...</a></p>
+<div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;sys/types.h&gt;</code><br />
+<code>#include &lt;signal.h&gt;</code><br />
+<code>#include &lt;unistd.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;gtk/gtk.h&gt;</code><br />
+<code>#include &lt;gtk/gtkx.h&gt;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="knihovna_8h_source.html">knihovna.h</a>&quot;</code><br />
+<code>#include &lt;ctype.h&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Definice maker</h2></td></tr>
+<tr class="memitem:a0ea7ff5947c5f5430a29fdd98391eb2a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#a0ea7ff5947c5f5430a29fdd98391eb2a">PLUS</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a0ea7ff5947c5f5430a29fdd98391eb2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5381a445a1e4bdc36460151d82eed95a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#a5381a445a1e4bdc36460151d82eed95a">MINUS</a>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:a5381a445a1e4bdc36460151d82eed95a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae50441ab9344ffbf8ce0f0851ea0ea19"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#ae50441ab9344ffbf8ce0f0851ea0ea19">TIMES</a>&#160;&#160;&#160;3</td></tr>
+<tr class="separator:ae50441ab9344ffbf8ce0f0851ea0ea19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cfec61a89f6f458fca8ec76b3a6029e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#a3cfec61a89f6f458fca8ec76b3a6029e">DIVIDE</a>&#160;&#160;&#160;4</td></tr>
+<tr class="separator:a3cfec61a89f6f458fca8ec76b3a6029e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d5e23bac60070676b465522a140f5c7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#a0d5e23bac60070676b465522a140f5c7">POWER</a>&#160;&#160;&#160;5</td></tr>
+<tr class="separator:a0d5e23bac60070676b465522a140f5c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77988da40e9a35da51ea0e8943ebbd4a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#a77988da40e9a35da51ea0e8943ebbd4a">ROOT</a>&#160;&#160;&#160;6</td></tr>
+<tr class="separator:a77988da40e9a35da51ea0e8943ebbd4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae22041d8460971590ce7baed62839e05"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#ae22041d8460971590ce7baed62839e05">COMBINATORY</a>&#160;&#160;&#160;7</td></tr>
+<tr class="separator:ae22041d8460971590ce7baed62839e05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funkce</h2></td></tr>
+<tr class="memitem:a4a0b0780cee3460ca5b5098b3a265495"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#a4a0b0780cee3460ca5b5098b3a265495">write_in_label</a> (char *str1)</td></tr>
+<tr class="memdesc:a4a0b0780cee3460ca5b5098b3a265495"><td class="mdescLeft">&#160;</td><td class="mdescRight">vypisuje cisla do labelu  <a href="GUI_8c.html#a4a0b0780cee3460ca5b5098b3a265495">...</a><br /></td></tr>
+<tr class="separator:a4a0b0780cee3460ca5b5098b3a265495"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89c221000357776c2988c62f03b9e2cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#a89c221000357776c2988c62f03b9e2cb">do_calculations</a> ()</td></tr>
+<tr class="memdesc:a89c221000357776c2988c62f03b9e2cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">vypocita vysledek na zaklade zvoleneho operatoru  <a href="GUI_8c.html#a89c221000357776c2988c62f03b9e2cb">...</a><br /></td></tr>
+<tr class="separator:a89c221000357776c2988c62f03b9e2cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
+<tr class="separator:a0ddf1224851353fc92bfbff6f499fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a822fdc8b472038ce7c642cc9b6796b26"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#a822fdc8b472038ce7c642cc9b6796b26">on_button_dot_clicked</a> (GtkButton *b)</td></tr>
+<tr class="memdesc:a822fdc8b472038ce7c642cc9b6796b26"><td class="mdescLeft">&#160;</td><td class="mdescRight">stisknuti tlacitka '.'  <a href="GUI_8c.html#a822fdc8b472038ce7c642cc9b6796b26">...</a><br /></td></tr>
+<tr class="separator:a822fdc8b472038ce7c642cc9b6796b26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a719e6a961890c4262cb209dcc93ecf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#a3a719e6a961890c4262cb209dcc93ecf">on_button_zero_clicked</a> (GtkButton *b)</td></tr>
+<tr class="memdesc:a3a719e6a961890c4262cb209dcc93ecf"><td class="mdescLeft">&#160;</td><td class="mdescRight">stisknuti tlacitka '0'  <a href="GUI_8c.html#a3a719e6a961890c4262cb209dcc93ecf">...</a><br /></td></tr>
+<tr class="separator:a3a719e6a961890c4262cb209dcc93ecf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5ddc171c39b65d6ae281c63520825e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#aa5ddc171c39b65d6ae281c63520825e8">on_button_eq_clicked</a> (GtkButton *b)</td></tr>
+<tr class="memdesc:aa5ddc171c39b65d6ae281c63520825e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">stisknuti tlacitka '='  <a href="GUI_8c.html#aa5ddc171c39b65d6ae281c63520825e8">...</a><br /></td></tr>
+<tr class="separator:aa5ddc171c39b65d6ae281c63520825e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77b3267c5746994761c8bb1797726492"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#a77b3267c5746994761c8bb1797726492">on_button_one_clicked</a> (GtkButton *b)</td></tr>
+<tr class="memdesc:a77b3267c5746994761c8bb1797726492"><td class="mdescLeft">&#160;</td><td class="mdescRight">stisknuti tlacitka '1'  <a href="GUI_8c.html#a77b3267c5746994761c8bb1797726492">...</a><br /></td></tr>
+<tr class="separator:a77b3267c5746994761c8bb1797726492"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c6495999fff4214fb66a9c83c3f8ff9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#a2c6495999fff4214fb66a9c83c3f8ff9">on_button_two_clicked</a> (GtkButton *b)</td></tr>
+<tr class="memdesc:a2c6495999fff4214fb66a9c83c3f8ff9"><td class="mdescLeft">&#160;</td><td class="mdescRight">stisknuti tlacitka '2'  <a href="GUI_8c.html#a2c6495999fff4214fb66a9c83c3f8ff9">...</a><br /></td></tr>
+<tr class="separator:a2c6495999fff4214fb66a9c83c3f8ff9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa03375bf41934c81d122a0aec5e8951c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#aa03375bf41934c81d122a0aec5e8951c">on_button_three_clicked</a> (GtkButton *b)</td></tr>
+<tr class="memdesc:aa03375bf41934c81d122a0aec5e8951c"><td class="mdescLeft">&#160;</td><td class="mdescRight">stisknuti tlacitka '3'  <a href="GUI_8c.html#aa03375bf41934c81d122a0aec5e8951c">...</a><br /></td></tr>
+<tr class="separator:aa03375bf41934c81d122a0aec5e8951c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6f2bf6ffe7909aa1302815ac2c9e1c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#ae6f2bf6ffe7909aa1302815ac2c9e1c2">on_button_four_clicked</a> (GtkButton *b)</td></tr>
+<tr class="memdesc:ae6f2bf6ffe7909aa1302815ac2c9e1c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">stisknuti tlacitka '4'  <a href="GUI_8c.html#ae6f2bf6ffe7909aa1302815ac2c9e1c2">...</a><br /></td></tr>
+<tr class="separator:ae6f2bf6ffe7909aa1302815ac2c9e1c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1ffa435d0140d78a4fb8c43a6078274"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#af1ffa435d0140d78a4fb8c43a6078274">on_button_five_clicked</a> (GtkButton *b)</td></tr>
+<tr class="memdesc:af1ffa435d0140d78a4fb8c43a6078274"><td class="mdescLeft">&#160;</td><td class="mdescRight">stisknuti tlacitka '5'  <a href="GUI_8c.html#af1ffa435d0140d78a4fb8c43a6078274">...</a><br /></td></tr>
+<tr class="separator:af1ffa435d0140d78a4fb8c43a6078274"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b4345cbebb329eb154f0cf44111bd90"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#a7b4345cbebb329eb154f0cf44111bd90">on_button_six_clicked</a> (GtkButton *b)</td></tr>
+<tr class="memdesc:a7b4345cbebb329eb154f0cf44111bd90"><td class="mdescLeft">&#160;</td><td class="mdescRight">stisknuti tlacitka '6'  <a href="GUI_8c.html#a7b4345cbebb329eb154f0cf44111bd90">...</a><br /></td></tr>
+<tr class="separator:a7b4345cbebb329eb154f0cf44111bd90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af60c31935a53109a0059ae8193399ca7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#af60c31935a53109a0059ae8193399ca7">on_button_seven_clicked</a> (GtkButton *b)</td></tr>
+<tr class="memdesc:af60c31935a53109a0059ae8193399ca7"><td class="mdescLeft">&#160;</td><td class="mdescRight">stisknuti tlacitka '7'  <a href="GUI_8c.html#af60c31935a53109a0059ae8193399ca7">...</a><br /></td></tr>
+<tr class="separator:af60c31935a53109a0059ae8193399ca7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a586925fd831dbd52379bcfe8c2582398"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#a586925fd831dbd52379bcfe8c2582398">on_button_eight_clicked</a> (GtkButton *b)</td></tr>
+<tr class="memdesc:a586925fd831dbd52379bcfe8c2582398"><td class="mdescLeft">&#160;</td><td class="mdescRight">stisknuti tlacitka '8'  <a href="GUI_8c.html#a586925fd831dbd52379bcfe8c2582398">...</a><br /></td></tr>
+<tr class="separator:a586925fd831dbd52379bcfe8c2582398"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b84d28679362622def2d08b142199be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#a6b84d28679362622def2d08b142199be">on_button_nine_clicked</a> (GtkButton *b)</td></tr>
+<tr class="memdesc:a6b84d28679362622def2d08b142199be"><td class="mdescLeft">&#160;</td><td class="mdescRight">stisknuti tlacitka '9'  <a href="GUI_8c.html#a6b84d28679362622def2d08b142199be">...</a><br /></td></tr>
+<tr class="separator:a6b84d28679362622def2d08b142199be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afde6fafd20ce1bb7b7092305d3beb77c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#afde6fafd20ce1bb7b7092305d3beb77c">on_button_div_clicked</a> (GtkButton *b)</td></tr>
+<tr class="memdesc:afde6fafd20ce1bb7b7092305d3beb77c"><td class="mdescLeft">&#160;</td><td class="mdescRight">stisknuti tlacitka deleno  <a href="GUI_8c.html#afde6fafd20ce1bb7b7092305d3beb77c">...</a><br /></td></tr>
+<tr class="separator:afde6fafd20ce1bb7b7092305d3beb77c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfccc03f49e030fc596be6b0ccc9c7b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#adfccc03f49e030fc596be6b0ccc9c7b3">on_button_times_clicked</a> (GtkButton *b)</td></tr>
+<tr class="memdesc:adfccc03f49e030fc596be6b0ccc9c7b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">stisknuti tlacitka krat  <a href="GUI_8c.html#adfccc03f49e030fc596be6b0ccc9c7b3">...</a><br /></td></tr>
+<tr class="separator:adfccc03f49e030fc596be6b0ccc9c7b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ed3c9047638e54466ac4deefddbff17"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#a9ed3c9047638e54466ac4deefddbff17">on_button_minus_clicked</a> (GtkButton *b)</td></tr>
+<tr class="memdesc:a9ed3c9047638e54466ac4deefddbff17"><td class="mdescLeft">&#160;</td><td class="mdescRight">stisknuti tlacitka minus  <a href="GUI_8c.html#a9ed3c9047638e54466ac4deefddbff17">...</a><br /></td></tr>
+<tr class="separator:a9ed3c9047638e54466ac4deefddbff17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e30a8a8e77c17fba2fe1ab1625fc234"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#a8e30a8a8e77c17fba2fe1ab1625fc234">on_button_plus_clicked</a> (GtkButton *b)</td></tr>
+<tr class="memdesc:a8e30a8a8e77c17fba2fe1ab1625fc234"><td class="mdescLeft">&#160;</td><td class="mdescRight">stisknuti tlacitka plus  <a href="GUI_8c.html#a8e30a8a8e77c17fba2fe1ab1625fc234">...</a><br /></td></tr>
+<tr class="separator:a8e30a8a8e77c17fba2fe1ab1625fc234"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c93dc4e0534d7e9e50112f7250d5e73"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#a6c93dc4e0534d7e9e50112f7250d5e73">on_button_fact_clicked</a> (GtkButton *b)</td></tr>
+<tr class="memdesc:a6c93dc4e0534d7e9e50112f7250d5e73"><td class="mdescLeft">&#160;</td><td class="mdescRight">stisknuti tlacitka faktorial  <a href="GUI_8c.html#a6c93dc4e0534d7e9e50112f7250d5e73">...</a><br /></td></tr>
+<tr class="separator:a6c93dc4e0534d7e9e50112f7250d5e73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cbf1240c63975f1a7ce739e255fec5f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#a6cbf1240c63975f1a7ce739e255fec5f">on_button_pwr_clicked</a> (GtkButton *b)</td></tr>
+<tr class="memdesc:a6cbf1240c63975f1a7ce739e255fec5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">stisknuti tlacitka mocniny  <a href="GUI_8c.html#a6cbf1240c63975f1a7ce739e255fec5f">...</a><br /></td></tr>
+<tr class="separator:a6cbf1240c63975f1a7ce739e255fec5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40d87bb06d9e42e2fe7a964aedcb1ff7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#a40d87bb06d9e42e2fe7a964aedcb1ff7">on_button_root_clicked</a> (GtkButton *b)</td></tr>
+<tr class="memdesc:a40d87bb06d9e42e2fe7a964aedcb1ff7"><td class="mdescLeft">&#160;</td><td class="mdescRight">stisknuti tlacitka odmocniny  <a href="GUI_8c.html#a40d87bb06d9e42e2fe7a964aedcb1ff7">...</a><br /></td></tr>
+<tr class="separator:a40d87bb06d9e42e2fe7a964aedcb1ff7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab64d17bf56f882f3a85273bd6676faf8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#ab64d17bf56f882f3a85273bd6676faf8">on_button_comb_clicked</a> (GtkButton *b)</td></tr>
+<tr class="memdesc:ab64d17bf56f882f3a85273bd6676faf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">stisknuti tlacitka kombinacniho cisla  <a href="GUI_8c.html#ab64d17bf56f882f3a85273bd6676faf8">...</a><br /></td></tr>
+<tr class="separator:ab64d17bf56f882f3a85273bd6676faf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16a8239f7aaace7e6dd4b2a6c86933ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#a16a8239f7aaace7e6dd4b2a6c86933ff">on_button_AC_clicked</a> (GtkButton *b)</td></tr>
+<tr class="memdesc:a16a8239f7aaace7e6dd4b2a6c86933ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">stisknuti tlacitka "AC"  <a href="GUI_8c.html#a16a8239f7aaace7e6dd4b2a6c86933ff">...</a><br /></td></tr>
+<tr class="separator:a16a8239f7aaace7e6dd4b2a6c86933ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1e0b3a7cf2397feb4bad50ff89e0e4e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#ad1e0b3a7cf2397feb4bad50ff89e0e4e">on_button_sign_clicked</a> (GtkButton *b)</td></tr>
+<tr class="memdesc:ad1e0b3a7cf2397feb4bad50ff89e0e4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">stisknuti tlacitka "+/-"  <a href="GUI_8c.html#ad1e0b3a7cf2397feb4bad50ff89e0e4e">...</a><br /></td></tr>
+<tr class="separator:ad1e0b3a7cf2397feb4bad50ff89e0e4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Proměnné</h2></td></tr>
+<tr class="memitem:a21233118924d1e3fe88430cd3eb304e4"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#a21233118924d1e3fe88430cd3eb304e4">num1</a></td></tr>
+<tr class="separator:a21233118924d1e3fe88430cd3eb304e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a6e7aeee021d5f285da97ecc451a113"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#a1a6e7aeee021d5f285da97ecc451a113">num2</a></td></tr>
+<tr class="separator:a1a6e7aeee021d5f285da97ecc451a113"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54f36638b5116cec7b107d8afee76805"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#a54f36638b5116cec7b107d8afee76805">operator=0</a></td></tr>
+<tr class="separator:a54f36638b5116cec7b107d8afee76805"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ea879c85fe119fa52f0621373b8adf4"><td class="memItemLeft" align="right" valign="top">GtkWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#a7ea879c85fe119fa52f0621373b8adf4">window1</a></td></tr>
+<tr class="separator:a7ea879c85fe119fa52f0621373b8adf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a791f9ed8499787d5e4047944d02bbb04"><td class="memItemLeft" align="right" valign="top">GtkWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#a791f9ed8499787d5e4047944d02bbb04">fixed1</a></td></tr>
+<tr class="separator:a791f9ed8499787d5e4047944d02bbb04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a398d04e8cf3ac37e3a67a754c667fd30"><td class="memItemLeft" align="right" valign="top">GtkWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#a398d04e8cf3ac37e3a67a754c667fd30">fixed2</a></td></tr>
+<tr class="separator:a398d04e8cf3ac37e3a67a754c667fd30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d7f6fb4f82a67da8520d407f0749661"><td class="memItemLeft" align="right" valign="top">GtkWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#a0d7f6fb4f82a67da8520d407f0749661">button_dot</a></td></tr>
+<tr class="separator:a0d7f6fb4f82a67da8520d407f0749661"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3adf5a0a6a15c81bbe1be01102aa694"><td class="memItemLeft" align="right" valign="top">GtkWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#ad3adf5a0a6a15c81bbe1be01102aa694">button_zero</a></td></tr>
+<tr class="separator:ad3adf5a0a6a15c81bbe1be01102aa694"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a059a0c9c87acd91d1611571ac99e81b7"><td class="memItemLeft" align="right" valign="top">GtkWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#a059a0c9c87acd91d1611571ac99e81b7">button_eq</a></td></tr>
+<tr class="separator:a059a0c9c87acd91d1611571ac99e81b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a724fb36af68cfdb6591faea885d44da8"><td class="memItemLeft" align="right" valign="top">GtkWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#a724fb36af68cfdb6591faea885d44da8">button_one</a></td></tr>
+<tr class="separator:a724fb36af68cfdb6591faea885d44da8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51a54360ab6ddcd068fe331047bbdb5b"><td class="memItemLeft" align="right" valign="top">GtkWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#a51a54360ab6ddcd068fe331047bbdb5b">button_two</a></td></tr>
+<tr class="separator:a51a54360ab6ddcd068fe331047bbdb5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d03666f18e36e3fa9c9cb1c3a9b8c15"><td class="memItemLeft" align="right" valign="top">GtkWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#a1d03666f18e36e3fa9c9cb1c3a9b8c15">button_three</a></td></tr>
+<tr class="separator:a1d03666f18e36e3fa9c9cb1c3a9b8c15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac544272acbee2f4ce036a02de95f676"><td class="memItemLeft" align="right" valign="top">GtkWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#aac544272acbee2f4ce036a02de95f676">button_four</a></td></tr>
+<tr class="separator:aac544272acbee2f4ce036a02de95f676"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92715bdb464bcca0158f8ebdac3a4240"><td class="memItemLeft" align="right" valign="top">GtkWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#a92715bdb464bcca0158f8ebdac3a4240">button_five</a></td></tr>
+<tr class="separator:a92715bdb464bcca0158f8ebdac3a4240"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0424d6ab8fcfd5f31194f6a6d6f445c8"><td class="memItemLeft" align="right" valign="top">GtkWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#a0424d6ab8fcfd5f31194f6a6d6f445c8">button_six</a></td></tr>
+<tr class="separator:a0424d6ab8fcfd5f31194f6a6d6f445c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2469657a5bce7e9bedb4b668dfea062"><td class="memItemLeft" align="right" valign="top">GtkWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#ab2469657a5bce7e9bedb4b668dfea062">button_seven</a></td></tr>
+<tr class="separator:ab2469657a5bce7e9bedb4b668dfea062"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a541ed1d7938749f0679b19c7e7291210"><td class="memItemLeft" align="right" valign="top">GtkWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#a541ed1d7938749f0679b19c7e7291210">button_eight</a></td></tr>
+<tr class="separator:a541ed1d7938749f0679b19c7e7291210"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addb7755eacd13f63c94a440b0787bb37"><td class="memItemLeft" align="right" valign="top">GtkWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#addb7755eacd13f63c94a440b0787bb37">button_nine</a></td></tr>
+<tr class="separator:addb7755eacd13f63c94a440b0787bb37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6552ddcc08c04f0ebf45deb90b0a8867"><td class="memItemLeft" align="right" valign="top">GtkWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#a6552ddcc08c04f0ebf45deb90b0a8867">button_div</a></td></tr>
+<tr class="separator:a6552ddcc08c04f0ebf45deb90b0a8867"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac50faf80d6a98906ee70d4f30eec295a"><td class="memItemLeft" align="right" valign="top">GtkWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#ac50faf80d6a98906ee70d4f30eec295a">button_times</a></td></tr>
+<tr class="separator:ac50faf80d6a98906ee70d4f30eec295a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfe6c7dab6cb149d9b5d4c27064f7dbc"><td class="memItemLeft" align="right" valign="top">GtkWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#adfe6c7dab6cb149d9b5d4c27064f7dbc">button_minus</a></td></tr>
+<tr class="separator:adfe6c7dab6cb149d9b5d4c27064f7dbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a854938420838b32dae6cd4511cbb0205"><td class="memItemLeft" align="right" valign="top">GtkWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#a854938420838b32dae6cd4511cbb0205">button_plus</a></td></tr>
+<tr class="separator:a854938420838b32dae6cd4511cbb0205"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b089713a69f19a9f376b571d0aa9ffe"><td class="memItemLeft" align="right" valign="top">GtkWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#a2b089713a69f19a9f376b571d0aa9ffe">button_fact</a></td></tr>
+<tr class="separator:a2b089713a69f19a9f376b571d0aa9ffe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69b0748e39881c4813d24e723daf8879"><td class="memItemLeft" align="right" valign="top">GtkWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#a69b0748e39881c4813d24e723daf8879">button_pwr</a></td></tr>
+<tr class="separator:a69b0748e39881c4813d24e723daf8879"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a893540a3a9f2d0ebb4bdeb42212a351f"><td class="memItemLeft" align="right" valign="top">GtkWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#a893540a3a9f2d0ebb4bdeb42212a351f">button_root</a></td></tr>
+<tr class="separator:a893540a3a9f2d0ebb4bdeb42212a351f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7f7200e545429594cb33801aaa73909"><td class="memItemLeft" align="right" valign="top">GtkWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#ad7f7200e545429594cb33801aaa73909">button_comb</a></td></tr>
+<tr class="separator:ad7f7200e545429594cb33801aaa73909"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a319a52028268475e8397246efc754f9f"><td class="memItemLeft" align="right" valign="top">GtkWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#a319a52028268475e8397246efc754f9f">button_AC</a></td></tr>
+<tr class="separator:a319a52028268475e8397246efc754f9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5da9a6e60ac55bf1d46091f1f21fcfa3"><td class="memItemLeft" align="right" valign="top">GtkWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#a5da9a6e60ac55bf1d46091f1f21fcfa3">button_sign</a></td></tr>
+<tr class="separator:a5da9a6e60ac55bf1d46091f1f21fcfa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14696010ddf6e2b112aa8a30a09166db"><td class="memItemLeft" align="right" valign="top">GtkWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#a14696010ddf6e2b112aa8a30a09166db">label1</a></td></tr>
+<tr class="separator:a14696010ddf6e2b112aa8a30a09166db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa501dbb63ae6077ac8db76b560de42b"><td class="memItemLeft" align="right" valign="top">GtkBuilder *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUI_8c.html#afa501dbb63ae6077ac8db76b560de42b">builder</a></td></tr>
+<tr class="separator:afa501dbb63ae6077ac8db76b560de42b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailní popis</h2>
+<div class="textblock"><p>Funkce reagujici na interakci s GUI. </p>
+</div><h2 class="groupheader">Dokumentace k definicím maker</h2>
+<a id="ae22041d8460971590ce7baed62839e05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae22041d8460971590ce7baed62839e05">&#9670;&nbsp;</a></span>COMBINATORY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define COMBINATORY&#160;&#160;&#160;7</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3cfec61a89f6f458fca8ec76b3a6029e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cfec61a89f6f458fca8ec76b3a6029e">&#9670;&nbsp;</a></span>DIVIDE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DIVIDE&#160;&#160;&#160;4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5381a445a1e4bdc36460151d82eed95a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5381a445a1e4bdc36460151d82eed95a">&#9670;&nbsp;</a></span>MINUS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MINUS&#160;&#160;&#160;2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0ea7ff5947c5f5430a29fdd98391eb2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ea7ff5947c5f5430a29fdd98391eb2a">&#9670;&nbsp;</a></span>PLUS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PLUS&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0d5e23bac60070676b465522a140f5c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d5e23bac60070676b465522a140f5c7">&#9670;&nbsp;</a></span>POWER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define POWER&#160;&#160;&#160;5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a77988da40e9a35da51ea0e8943ebbd4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77988da40e9a35da51ea0e8943ebbd4a">&#9670;&nbsp;</a></span>ROOT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ROOT&#160;&#160;&#160;6</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae50441ab9344ffbf8ce0f0851ea0ea19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae50441ab9344ffbf8ce0f0851ea0ea19">&#9670;&nbsp;</a></span>TIMES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TIMES&#160;&#160;&#160;3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentace funkcí</h2>
+<a id="a89c221000357776c2988c62f03b9e2cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89c221000357776c2988c62f03b9e2cb">&#9670;&nbsp;</a></span>do_calculations()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void do_calculations </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>vypocita vysledek na zaklade zvoleneho operatoru </p>
+<p>odesle informace do funkce ke spocitani </p>
+
+</div>
+</div>
+<a id="a0ddf1224851353fc92bfbff6f499fa97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ddf1224851353fc92bfbff6f499fa97">&#9670;&nbsp;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>argv</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a16a8239f7aaace7e6dd4b2a6c86933ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16a8239f7aaace7e6dd4b2a6c86933ff">&#9670;&nbsp;</a></span>on_button_AC_clicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_button_AC_clicked </td>
+          <td>(</td>
+          <td class="paramtype">GtkButton *&#160;</td>
+          <td class="paramname"><em>b</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>stisknuti tlacitka "AC" </p>
+
+</div>
+</div>
+<a id="ab64d17bf56f882f3a85273bd6676faf8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab64d17bf56f882f3a85273bd6676faf8">&#9670;&nbsp;</a></span>on_button_comb_clicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_button_comb_clicked </td>
+          <td>(</td>
+          <td class="paramtype">GtkButton *&#160;</td>
+          <td class="paramname"><em>b</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>stisknuti tlacitka kombinacniho cisla </p>
+
+</div>
+</div>
+<a id="afde6fafd20ce1bb7b7092305d3beb77c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afde6fafd20ce1bb7b7092305d3beb77c">&#9670;&nbsp;</a></span>on_button_div_clicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_button_div_clicked </td>
+          <td>(</td>
+          <td class="paramtype">GtkButton *&#160;</td>
+          <td class="paramname"><em>b</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>stisknuti tlacitka deleno </p>
+
+</div>
+</div>
+<a id="a822fdc8b472038ce7c642cc9b6796b26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a822fdc8b472038ce7c642cc9b6796b26">&#9670;&nbsp;</a></span>on_button_dot_clicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_button_dot_clicked </td>
+          <td>(</td>
+          <td class="paramtype">GtkButton *&#160;</td>
+          <td class="paramname"><em>b</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>stisknuti tlacitka '.' </p>
+
+</div>
+</div>
+<a id="a586925fd831dbd52379bcfe8c2582398"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a586925fd831dbd52379bcfe8c2582398">&#9670;&nbsp;</a></span>on_button_eight_clicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_button_eight_clicked </td>
+          <td>(</td>
+          <td class="paramtype">GtkButton *&#160;</td>
+          <td class="paramname"><em>b</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>stisknuti tlacitka '8' </p>
+
+</div>
+</div>
+<a id="aa5ddc171c39b65d6ae281c63520825e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5ddc171c39b65d6ae281c63520825e8">&#9670;&nbsp;</a></span>on_button_eq_clicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_button_eq_clicked </td>
+          <td>(</td>
+          <td class="paramtype">GtkButton *&#160;</td>
+          <td class="paramname"><em>b</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>stisknuti tlacitka '=' </p>
+
+</div>
+</div>
+<a id="a6c93dc4e0534d7e9e50112f7250d5e73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c93dc4e0534d7e9e50112f7250d5e73">&#9670;&nbsp;</a></span>on_button_fact_clicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_button_fact_clicked </td>
+          <td>(</td>
+          <td class="paramtype">GtkButton *&#160;</td>
+          <td class="paramname"><em>b</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>stisknuti tlacitka faktorial </p>
+
+</div>
+</div>
+<a id="af1ffa435d0140d78a4fb8c43a6078274"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1ffa435d0140d78a4fb8c43a6078274">&#9670;&nbsp;</a></span>on_button_five_clicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_button_five_clicked </td>
+          <td>(</td>
+          <td class="paramtype">GtkButton *&#160;</td>
+          <td class="paramname"><em>b</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>stisknuti tlacitka '5' </p>
+
+</div>
+</div>
+<a id="ae6f2bf6ffe7909aa1302815ac2c9e1c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6f2bf6ffe7909aa1302815ac2c9e1c2">&#9670;&nbsp;</a></span>on_button_four_clicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_button_four_clicked </td>
+          <td>(</td>
+          <td class="paramtype">GtkButton *&#160;</td>
+          <td class="paramname"><em>b</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>stisknuti tlacitka '4' </p>
+
+</div>
+</div>
+<a id="a9ed3c9047638e54466ac4deefddbff17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ed3c9047638e54466ac4deefddbff17">&#9670;&nbsp;</a></span>on_button_minus_clicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_button_minus_clicked </td>
+          <td>(</td>
+          <td class="paramtype">GtkButton *&#160;</td>
+          <td class="paramname"><em>b</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>stisknuti tlacitka minus </p>
+
+</div>
+</div>
+<a id="a6b84d28679362622def2d08b142199be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b84d28679362622def2d08b142199be">&#9670;&nbsp;</a></span>on_button_nine_clicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_button_nine_clicked </td>
+          <td>(</td>
+          <td class="paramtype">GtkButton *&#160;</td>
+          <td class="paramname"><em>b</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>stisknuti tlacitka '9' </p>
+
+</div>
+</div>
+<a id="a77b3267c5746994761c8bb1797726492"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77b3267c5746994761c8bb1797726492">&#9670;&nbsp;</a></span>on_button_one_clicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_button_one_clicked </td>
+          <td>(</td>
+          <td class="paramtype">GtkButton *&#160;</td>
+          <td class="paramname"><em>b</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>stisknuti tlacitka '1' </p>
+
+</div>
+</div>
+<a id="a8e30a8a8e77c17fba2fe1ab1625fc234"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e30a8a8e77c17fba2fe1ab1625fc234">&#9670;&nbsp;</a></span>on_button_plus_clicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_button_plus_clicked </td>
+          <td>(</td>
+          <td class="paramtype">GtkButton *&#160;</td>
+          <td class="paramname"><em>b</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>stisknuti tlacitka plus </p>
+
+</div>
+</div>
+<a id="a6cbf1240c63975f1a7ce739e255fec5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cbf1240c63975f1a7ce739e255fec5f">&#9670;&nbsp;</a></span>on_button_pwr_clicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_button_pwr_clicked </td>
+          <td>(</td>
+          <td class="paramtype">GtkButton *&#160;</td>
+          <td class="paramname"><em>b</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>stisknuti tlacitka mocniny </p>
+
+</div>
+</div>
+<a id="a40d87bb06d9e42e2fe7a964aedcb1ff7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40d87bb06d9e42e2fe7a964aedcb1ff7">&#9670;&nbsp;</a></span>on_button_root_clicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_button_root_clicked </td>
+          <td>(</td>
+          <td class="paramtype">GtkButton *&#160;</td>
+          <td class="paramname"><em>b</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>stisknuti tlacitka odmocniny </p>
+
+</div>
+</div>
+<a id="af60c31935a53109a0059ae8193399ca7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af60c31935a53109a0059ae8193399ca7">&#9670;&nbsp;</a></span>on_button_seven_clicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_button_seven_clicked </td>
+          <td>(</td>
+          <td class="paramtype">GtkButton *&#160;</td>
+          <td class="paramname"><em>b</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>stisknuti tlacitka '7' </p>
+
+</div>
+</div>
+<a id="ad1e0b3a7cf2397feb4bad50ff89e0e4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1e0b3a7cf2397feb4bad50ff89e0e4e">&#9670;&nbsp;</a></span>on_button_sign_clicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_button_sign_clicked </td>
+          <td>(</td>
+          <td class="paramtype">GtkButton *&#160;</td>
+          <td class="paramname"><em>b</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>stisknuti tlacitka "+/-" </p>
+
+</div>
+</div>
+<a id="a7b4345cbebb329eb154f0cf44111bd90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b4345cbebb329eb154f0cf44111bd90">&#9670;&nbsp;</a></span>on_button_six_clicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_button_six_clicked </td>
+          <td>(</td>
+          <td class="paramtype">GtkButton *&#160;</td>
+          <td class="paramname"><em>b</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>stisknuti tlacitka '6' </p>
+
+</div>
+</div>
+<a id="aa03375bf41934c81d122a0aec5e8951c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa03375bf41934c81d122a0aec5e8951c">&#9670;&nbsp;</a></span>on_button_three_clicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_button_three_clicked </td>
+          <td>(</td>
+          <td class="paramtype">GtkButton *&#160;</td>
+          <td class="paramname"><em>b</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>stisknuti tlacitka '3' </p>
+
+</div>
+</div>
+<a id="adfccc03f49e030fc596be6b0ccc9c7b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfccc03f49e030fc596be6b0ccc9c7b3">&#9670;&nbsp;</a></span>on_button_times_clicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_button_times_clicked </td>
+          <td>(</td>
+          <td class="paramtype">GtkButton *&#160;</td>
+          <td class="paramname"><em>b</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>stisknuti tlacitka krat </p>
+
+</div>
+</div>
+<a id="a2c6495999fff4214fb66a9c83c3f8ff9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c6495999fff4214fb66a9c83c3f8ff9">&#9670;&nbsp;</a></span>on_button_two_clicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_button_two_clicked </td>
+          <td>(</td>
+          <td class="paramtype">GtkButton *&#160;</td>
+          <td class="paramname"><em>b</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>stisknuti tlacitka '2' </p>
+
+</div>
+</div>
+<a id="a3a719e6a961890c4262cb209dcc93ecf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a719e6a961890c4262cb209dcc93ecf">&#9670;&nbsp;</a></span>on_button_zero_clicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_button_zero_clicked </td>
+          <td>(</td>
+          <td class="paramtype">GtkButton *&#160;</td>
+          <td class="paramname"><em>b</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>stisknuti tlacitka '0' </p>
+
+</div>
+</div>
+<a id="a4a0b0780cee3460ca5b5098b3a265495"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a0b0780cee3460ca5b5098b3a265495">&#9670;&nbsp;</a></span>write_in_label()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void write_in_label </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>str1</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>vypisuje cisla do labelu </p>
+<p>vypisuje cisla do labelu </p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentace proměnných</h2>
+<a id="afa501dbb63ae6077ac8db76b560de42b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa501dbb63ae6077ac8db76b560de42b">&#9670;&nbsp;</a></span>builder</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GtkBuilder* builder</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a319a52028268475e8397246efc754f9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a319a52028268475e8397246efc754f9f">&#9670;&nbsp;</a></span>button_AC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GtkWidget* button_AC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad7f7200e545429594cb33801aaa73909"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7f7200e545429594cb33801aaa73909">&#9670;&nbsp;</a></span>button_comb</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GtkWidget* button_comb</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6552ddcc08c04f0ebf45deb90b0a8867"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6552ddcc08c04f0ebf45deb90b0a8867">&#9670;&nbsp;</a></span>button_div</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GtkWidget* button_div</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0d7f6fb4f82a67da8520d407f0749661"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d7f6fb4f82a67da8520d407f0749661">&#9670;&nbsp;</a></span>button_dot</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GtkWidget* button_dot</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a541ed1d7938749f0679b19c7e7291210"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a541ed1d7938749f0679b19c7e7291210">&#9670;&nbsp;</a></span>button_eight</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GtkWidget* button_eight</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a059a0c9c87acd91d1611571ac99e81b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a059a0c9c87acd91d1611571ac99e81b7">&#9670;&nbsp;</a></span>button_eq</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GtkWidget* button_eq</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2b089713a69f19a9f376b571d0aa9ffe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b089713a69f19a9f376b571d0aa9ffe">&#9670;&nbsp;</a></span>button_fact</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GtkWidget* button_fact</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a92715bdb464bcca0158f8ebdac3a4240"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92715bdb464bcca0158f8ebdac3a4240">&#9670;&nbsp;</a></span>button_five</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GtkWidget* button_five</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aac544272acbee2f4ce036a02de95f676"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac544272acbee2f4ce036a02de95f676">&#9670;&nbsp;</a></span>button_four</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GtkWidget* button_four</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adfe6c7dab6cb149d9b5d4c27064f7dbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfe6c7dab6cb149d9b5d4c27064f7dbc">&#9670;&nbsp;</a></span>button_minus</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GtkWidget* button_minus</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="addb7755eacd13f63c94a440b0787bb37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addb7755eacd13f63c94a440b0787bb37">&#9670;&nbsp;</a></span>button_nine</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GtkWidget* button_nine</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a724fb36af68cfdb6591faea885d44da8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a724fb36af68cfdb6591faea885d44da8">&#9670;&nbsp;</a></span>button_one</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GtkWidget* button_one</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a854938420838b32dae6cd4511cbb0205"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a854938420838b32dae6cd4511cbb0205">&#9670;&nbsp;</a></span>button_plus</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GtkWidget* button_plus</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a69b0748e39881c4813d24e723daf8879"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69b0748e39881c4813d24e723daf8879">&#9670;&nbsp;</a></span>button_pwr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GtkWidget* button_pwr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a893540a3a9f2d0ebb4bdeb42212a351f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a893540a3a9f2d0ebb4bdeb42212a351f">&#9670;&nbsp;</a></span>button_root</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GtkWidget* button_root</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab2469657a5bce7e9bedb4b668dfea062"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2469657a5bce7e9bedb4b668dfea062">&#9670;&nbsp;</a></span>button_seven</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GtkWidget* button_seven</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5da9a6e60ac55bf1d46091f1f21fcfa3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5da9a6e60ac55bf1d46091f1f21fcfa3">&#9670;&nbsp;</a></span>button_sign</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GtkWidget* button_sign</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0424d6ab8fcfd5f31194f6a6d6f445c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0424d6ab8fcfd5f31194f6a6d6f445c8">&#9670;&nbsp;</a></span>button_six</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GtkWidget* button_six</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1d03666f18e36e3fa9c9cb1c3a9b8c15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d03666f18e36e3fa9c9cb1c3a9b8c15">&#9670;&nbsp;</a></span>button_three</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GtkWidget* button_three</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac50faf80d6a98906ee70d4f30eec295a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac50faf80d6a98906ee70d4f30eec295a">&#9670;&nbsp;</a></span>button_times</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GtkWidget* button_times</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a51a54360ab6ddcd068fe331047bbdb5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51a54360ab6ddcd068fe331047bbdb5b">&#9670;&nbsp;</a></span>button_two</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GtkWidget* button_two</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad3adf5a0a6a15c81bbe1be01102aa694"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3adf5a0a6a15c81bbe1be01102aa694">&#9670;&nbsp;</a></span>button_zero</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GtkWidget* button_zero</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a791f9ed8499787d5e4047944d02bbb04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a791f9ed8499787d5e4047944d02bbb04">&#9670;&nbsp;</a></span>fixed1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GtkWidget* fixed1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a398d04e8cf3ac37e3a67a754c667fd30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a398d04e8cf3ac37e3a67a754c667fd30">&#9670;&nbsp;</a></span>fixed2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GtkWidget* fixed2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a14696010ddf6e2b112aa8a30a09166db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14696010ddf6e2b112aa8a30a09166db">&#9670;&nbsp;</a></span>label1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GtkWidget* label1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a21233118924d1e3fe88430cd3eb304e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21233118924d1e3fe88430cd3eb304e4">&#9670;&nbsp;</a></span>num1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double num1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1a6e7aeee021d5f285da97ecc451a113"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a6e7aeee021d5f285da97ecc451a113">&#9670;&nbsp;</a></span>num2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double num2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a54f36638b5116cec7b107d8afee76805"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54f36638b5116cec7b107d8afee76805">&#9670;&nbsp;</a></span>operator=0</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int operator=0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7ea879c85fe119fa52f0621373b8adf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ea879c85fe119fa52f0621373b8adf4">&#9670;&nbsp;</a></span>window1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GtkWidget* window1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generováno programem &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.18
+</small></address>
+</body>
+</html>
