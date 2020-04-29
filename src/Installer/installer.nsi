@@ -38,6 +38,11 @@ Section
     File "..\..\binarky\*.dll"
     File "..\..\binarky\GUI.glade"
     File "..\..\binarky\help.html"
+    File "VC_redist.x86.exe"
+
+    # run redistributable package
+    ExecWait '$INSTDIR\karkulacka\VC_redist.x86.exe /install /passive /norestart'
+
 
     # create the uninstaller
     WriteUninstaller "$INSTDIR\karkulacka\uninstall.exe"
